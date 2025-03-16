@@ -89,17 +89,6 @@ public class Product {
         associatedParts.add(part);
     }
     
-    public void removeAssociatedPart(Part part) {
-        associatedParts.remove(part);
-    }
-    
-    public Part lookupAssociatedPart(String searchItem) {
-        for(Part p:associatedParts) {
-            if(p.getName().contains(searchItem) || new Integer(p.getPartId()).toString().equals(searchItem)) return p;
-        }
-        return null;
-    }
-    
     /**
      * Generate an error message for invalid values in a product
      * and evaluate whether the sum of the price of associated parts
