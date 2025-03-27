@@ -21,14 +21,14 @@ import java.net.URL;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
+
 public class AddProductController implements Initializable, Controller {
     
     // Declare fields
     private Stage stage;
     private Parent scene;
     private ObservableList<Part> addParts = FXCollections.observableArrayList();
-    private String errorMessage = new String();
-    private int productId;
+    private String errorMessage = "";
 
     private InventoryService service;
     
@@ -149,7 +149,7 @@ public class AddProductController implements Initializable, Controller {
 
         if (result.get() == ButtonType.OK) {
             System.out.println("Part deleted.");
-            addParts.remove(part);
+            addParts.remove(part.getPartId());
         } else {
             System.out.println("Canceled part deletion.");
         }
