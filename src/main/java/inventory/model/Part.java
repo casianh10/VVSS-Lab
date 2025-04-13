@@ -88,7 +88,7 @@ public abstract class Part {
             errorMessage += "A name has not been entered. ";
         }
         if(price < 0.01) {
-            errorMessage += "The price must be greater than 0. ";
+            errorMessage += "The price must be greater than 0.0";
         }
         if(inStock < 1) {
             errorMessage += "Inventory level must be greater than 0. ";
