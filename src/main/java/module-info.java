@@ -9,4 +9,8 @@ module inventory {
     exports inventory;
     opens inventory.controller to javafx.fxml;
     exports inventory.controller;
+
+    exports inventory.repository;
+    // allow mocking libraries like Mockito to access it
+    opens inventory.repository to org.mockito;
 }
