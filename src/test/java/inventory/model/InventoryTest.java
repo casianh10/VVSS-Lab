@@ -45,19 +45,21 @@ class InventoryTest {
     @Test
     @DisplayName("Search item not found")
     void lookUpProduct_TC03() {
-        assertNull(inventory.lookupProduct("TEST"));
+        assertNull(inventory.lookupProduct("__does_not_exist__"));
     }
 
     @Test
-    @DisplayName("Empty list")
+    @DisplayName("Search in empty inventory returns null")
     void lookUpProduct_TC04() {
+        inventory.getProducts().clear();
 
-        List<Product> prods = inventory.getProducts();
-        inventory.removeProduct(prods.get(0));
-        inventory.removeProduct(prods.get(0));
-        inventory.removeProduct(prods.get(0));
+        Product result = inventory.lookupProduct("TEST");
 
-        assertThrows(NullPointerException.class, () -> inventory.lookupProduct("TEST").getProductId()) ;
+        assertNull(result, "Expected lookupProduct to return null when inventory is empty");
     }
+
+
+
+
 
 }
