@@ -6,8 +6,8 @@ import inventory.repository.InventoryRepository;
 import inventory.service.InventoryService;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import org.junit.Before;
 import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.any;
@@ -16,7 +16,7 @@ public class InventoryTestStep3Test {
     private InventoryRepository inventoryRepository;
     private InventoryService inventoryService;
 
-    @Before
+    @BeforeEach
     public void setUp() {
         // Inițializăm un InventoryRepository real
         inventoryRepository = new InventoryRepository();
